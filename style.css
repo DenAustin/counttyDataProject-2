@@ -78,9 +78,9 @@ button {
 
 .countries-container > div {
   width: 200px;
-  height: 200px;
+ /* height: 200px;*/
   background:rgb(248, 240, 240);
   margin:5px;
-  line-height: 190px;
+  /* line-height: 190px; */
   text-align: center;
 }

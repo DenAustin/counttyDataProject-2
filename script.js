@@ -18,16 +18,15 @@
 
 
 
-
   // function to filter nations by start letter
   const filterCountriesByStartingStr = (arr, term) => {
-      const filteredCountries = arr.filter((country) =>  country.toLowerCase().startsWith(term.toLowerCase()))
+      const filteredCountries = arr.filter((country) =>  country.name.toLowerCase().startsWith(term.toLowerCase()))
       return filteredCountries
     }
     
     // function to filter nations by string segment
     const filterNationsByStrSequence = (arr, term) => {
-      const filteredCountries = arr.filter((country) =>  country.toLowerCase().includes(term.toLowerCase()))
+      const filteredCountries = arr.filter((country) =>  country.name.toLowerCase().includes(term.toLowerCase()))
       return filteredCountries
     }
     
@@ -37,79 +36,30 @@
     
       let content = ''
       for(const country of arr){
-        
-        
             
-          
-        content +=  `<div><h3> Country: ${country.name && country.capital}</h3></div>`
-          console.log(content)
-        content.textCon
-        
-        
+        let {name,capital,population,region,languages,flag} = country;
+
+        flexContainer.innerHTML +=  `<div><h3>Name:  ${name}</h3>
+        <h4> Capital: ${capital}</h4><h4> Pop: ${population}</h4><h4> Lang.: ${languages}</h4></div>`
+                
       }
-    
-      flexContainer.innerHTML = content
-    
+      //flexContainer.innerHTML = content
     }
     
     showCountries(countries)
     
-    const filterCountries = (arr, term) => {
+    const filterCountriesByInclude = (arr, term) => {
       const filteredCountries = arr.filter((country) =>  country.name.toLowerCase().includes(term.toLowerCase()))
+      
       return filteredCountries
     }
     
     // Event listener for starting word button
     inputField.addEventListener('input', (event) => {
       let inputField = event.target.value;
-      const filteredCountries = filterCountries(countries, inputField)
+      const filteredCountries = filterCountriesByInclude(countries, inputField)
       showCountries(filteredCountries)
     
     })
-
-
-  /*
-  //General filter for one element at a time
-  const filteredStatesStartLetter = (arr, term) => { 
-      const filteredStates = arr.filter((state) => state.toLowerCase().startsWith
-      (term.toLowerCase()))
-      
-      return filteredStates
-  }
-
-
-
-  // Function to create the display divs
-  const displayStates = (arr) => {
-      flexContainer.innerHTML = ''
-      let content = ''
-      for(const country of arr){
-    
-        content += `<div>
-        <h1>${country.name}</h1>,
-        
-        </div>`
-      }
-      flexContainer.innerHTML = content  
-    }
-    
-  displayStates(countries)
-
-  // Event listener for starting word button
-  inputField.addEventListener('input', (e) => {
-      let inputField = e.target.value;
-      const filteredStates = filteredStatesStartLetter(countries, inputField)
-      displayStates(filteredStates);
-    
-    })
-
-
-  */
-    
-
-
-
-
-
 
 
