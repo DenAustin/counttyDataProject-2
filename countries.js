@@ -1,4 +1,4 @@
-const countries = [
+countries = [
   {
     name: 'Afghanistan',
     capital: 'Kabul',
@@ -24,7 +24,14 @@ const countries = [
     flag: 'https://restcountries.eu/data/gha.svg',
     currency: 'Ghanaian cedi',
   },
-  
+  {
+    name: 'Niger',
+    capital: 'Accrada',
+    languages: ['English', 'Fula'],
+    population: 186988000,
+    flag: 'https://restcountries.eu/data/nga.svg',
+    currency: 'Nigerian naira',
+  },  
   {
     name: 'Nigeria',
     capital: 'Abuja',
